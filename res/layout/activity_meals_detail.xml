@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/include_title" />
+
+    <TextView
+        android:id="@+id/meal_time"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/meal_head_bg"
+        android:gravity="center"
+        android:text="送餐时间：上午10点送达"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/text_size_16" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/meal_item_bg" >
+
+        <TextView
+            android:id="@+id/zaocan_type"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="欧式早餐"
+            android:textSize="@dimen/text_size_18" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="(提供时间：早晨6:00到上午10:00)"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/text_size_16" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:padding="10dp" >
+
+        <ImageView
+            android:id="@+id/item_icon"
+            android:layout_width="110dp"
+            android:layout_height="115dp"
+            android:background="@drawable/european"
+            android:scaleType="fitXY" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical" >
+
+
+            <ListView
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@color/divider_color"
+                android:dividerHeight="1dp"
+                android:listSelector="@android:color/transparent" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider_color" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginRight="20dp"
+        android:gravity="right|center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="共"
+            android:textColor="@color/orange"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/btn_desc"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/meals_btn_desc" />
+
+        <EditText
+            android:id="@+id/et_total"
+            android:layout_width="40dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="0"
+            android:background="@drawable/btn_total"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/text_dark_grey"
+            android:textSize="@dimen/text_size_14" />
+
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/meals_btn_add" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="份"
+            android:textColor="@color/orange"
+            android:textSize="18dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="总价："
+            android:textColor="@color/orange"
+            android:textSize="18dp" />
+
+        <TextView
+              android:id="@+id/zongjia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="￥108"
+            android:textColor="@color/orange"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider_color" />
+
+    <Button
+        android:id="@+id/tianjia"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_gravity="right"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/meal_add_btn_bg"
+        android:scaleType="fitXY"
+        android:text="加入购物车"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_18" />
+
+</LinearLayout>

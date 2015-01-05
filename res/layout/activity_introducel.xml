@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <include layout="@layout/include_title" />
+    <FrameLayout
+        android:id="@+id/fl"
+        android:layout_width="match_parent"
+        android:layout_height="200dip" >
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="35dip"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:orientation="horizontal" >
+        </LinearLayout>
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="社会山概述"
+        android:textSize="22sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+         >
+<TextView 
+     android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+    android:text="去社会山-嘉佑温泉的N大理由
+理由1
+温泉方案借鉴了日本大江户温泉的经营模式，以宋文化为主题的“嘉佑温泉”在国内首创体验式温泉运作模式。
+理由2
+设置了按摩间、足疗房与休息厅，更为您提供了各类特色浴种，如：电气浴、碳酸浴、打濑浴、鱼疗、绢浴等。
+理由3
+雅致的露天汤屋，配以日本枯山水的景观，营造出情境合一、身心愉悦的温泉氛围。
+蚂蜂窝驴友这样评价社会山-嘉佑温泉
+蛮舒服的，可以放松一下，消除疲劳，下次还会带朋友们去玩去。
+— — 牛奶
+这里空气清新，环境很好，泡温泉赏美景。
+— — 力士
+第一次泡温泉，真的很舒服，而且有那么多的池子可供选择，真的值了。
+— — qwertd 社会山-嘉佑温泉详情 游玩景点社会山-嘉佑温泉
+嘉佑温泉位于社会山整体温泉商业规划的最南侧，地上共3层，总建筑面积约20000㎡。温泉项目方案借鉴了日本大江户温泉的经营模式，以宋文化为主题的“嘉佑温泉”在国内首创体验式温泉运作模式。
+社会山-嘉佑温泉 社会山-嘉佑温"
+    />
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <include layout="@layout/include_title" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="300dp"
+        android:layout_height="200dp"
+            android:layout_marginTop="20dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/huawai_wendding" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="户外婚礼"
+                android:textSize="@dimen/text_size_18" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/describe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="10dp"
+                    android:text="1、场地布置
+
+户外婚礼的场地装饰布置，是婚礼成败的一个关键环节。必要的舞台，背景装饰，增添气氛，烘托效果的场景布置，音响，灯光的安排。结合环境特点，特殊的造型修饰等，共同作成了一个温馨浪漫，清新自然，独具特色的婚礼现场，草坪婚礼的基本格调应该以西式风格为主，在婚礼的设计上要根据实地的条件和新人的特点，来指定方案。
+2、花艺选择
+可以用绿色为主色调搭配淡紫色或粉色，明黄等。餐桌可以只是简单的花艺装饰，以白色绿色为主。或者梦幻一点的新人选择粉色，紫色，桌上，场地可以洒满花瓣。
+3、迎宾区
+新人迎接宾客的地方。不同的设计布置会有不同的效果。简洁的鲜花布置，清爽的花朵，浪漫的感觉;蓝色的迎宾区，适合童话婚礼和海洋婚礼;喜气洋洋的红色，给人热闹喜庆的感觉。迎宾区是首先进入来宾视线的一个区域，别致的布置会让人耳目一新。
+4、特色创意
+如果在温馨的小旅馆中度过浪漫的周末就是你们眼中的幸福，那么给你们的婚礼设计一些淳朴时尚的感动。被粉刷成白色的木质长椅，重新改制的古老门窗，装满素雅洁白的满天星的花盆，以及可爱的小鸟水盆，这些细节会给你们的婚礼增添一抹清新淳朴的浪漫。"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/text_size_16" />
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

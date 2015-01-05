@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="none"
+     xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    android:orientation="vertical" >
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="空中连廊"
+        android:gravity="center_horizontal"
+        android:textSize="20sp"
+        android:layout_marginBottom="5dp"/>
+    	
+    	
+		
+		<ImageView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:id="@+id/aircorridor"
+        />
+		
+		<TextView 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_marginTop="5dp"
+		    android:textSize="16sp"
+		    android:text="空中连廊的出现，使社会山会议度假酒店群紧密连接，采用最新科技，实现了冷暖供给，无论是在炎热的夏日还是寒冷的冬季，都可以使客人享受到独有的便捷与舒适。独特的彩虹桥将嘉佑温泉与酒店之间无缝连接，让您漫步穿行于客房与温泉之间。"/>
+		
+	</LinearLayout>
+</ScrollView>

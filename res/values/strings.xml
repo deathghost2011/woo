@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+ 	<string name="title_china">社会山会议度假酒店群</string>
+ 	<string name="title_english">Social Hill</string>
+ 	
+ 	 <string-array name="jazzy_effects">
+        <item>Standard</item>
+        <item>Tablet</item>
+        <item>CubeIn</item>
+        <item>CubeOut</item>
+        <item>FlipVertical</item>
+        <item>FlipHorizontal</item>
+        <item>Stack</item>
+        <item>ZoomIn</item>
+        <item>ZoomOut</item>
+        <item>RotateUp</item>
+        <item>RotateDown</item>
+        <item>Accordion</item>
+    </string-array>
+ 	   <string name="app_name">社会山</string>
+    <!-- 温泉、娱乐、餐饮、会议、客房 -->
+    <string name="search">酒店、婚宴、饮食</string>
+    <string name="tab_hotspring">温泉</string>
+    <string name="tab_arder">娱乐</string>
+    <string name="tab_guestroom">首页</string>
+    <string name="tab_cater">餐饮</string>
+    <string name="tab_meeting">会议</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_index">IndexActivity</string>
+    <string name="title_activity_order">OrderActivity</string>
+    <string name="title_activity_room_list">RoomListActivity</string>
+    <string name="title_activity_room_detial">RoomDetialActivity</string>
+    <!-- tab -->
+    <string name="tab_1">首页</string>
+    <string name="tab_2">搜索</string>
+    <string name="tab_3">收藏</string>
+    <string name="tab_4">更多</string>
+    <!-- ===== -->
+    <string name="act_list">客房列表</string>
+    <!-- index++标题 -->
+    <string name="index_1">会议酒店</string>
+    <string name="index_2">定制婚宴</string>
+    <string name="index_3">温泉预定</string>
+    <string name="index_4">最新优惠</string>
+    <string name="index_5">特色餐厅</string>
+    <string name="index_6">都喜九点</string>
+    <string name="index_7">快速服务</string>
+
+    <!-- Vip等级 -->
+    <string name="vip_lvl">会员等级:</string>
+    <string name="vip_normal">普通会员</string>
+    <string name="vip_silver">银卡会员</string>
+    <string name="vip_gold">金卡会员</string>
+    
+    <!-- Room等级 -->
+    <string name="room_lvl">客房种类:</string>
+    <string name="room_normal">双标间</string>
+    <string name="room_senior">高级套房</string>
+    <string name="room_luxury">豪华套房</string>
+    
+    <!-- pullscrollview -->
+    <string name="pulldown_scrollview">PulldownScrollView</string>
+    <string name="stretch_scrollview">StretchScrollView</string>
+    <string name="add_attention">去订房</string>
+    <string name="user_post">剩余：8套</string>
+    <string name="user_book">价格：599元</string>
+    <string name="user_name">豪华套间</string>
+    <string name="user_des">精品大床房你值得拥有，还在犹豫什么，现在就下单吧</string>
+    <string name="user_recommend_tip">客房内景</string>
+    <string name="user_recommend_tip2">酒店环境</string>
+    <string name="user_recommend_tip3">周边设施</string>
+    <string name="title_activity_room_search">RoomSearchActivity</string>
+
+    
+      <!-- welcome -->
+       <string name="welcome_text">欢迎进入社会山会议度假酒店群</string>
+</resources>

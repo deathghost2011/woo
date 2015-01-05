@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <include layout="@layout/include_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="16dp" >
+
+        <Button
+            android:id="@+id/btn_restaurant1"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/restaurant1" />
+
+        <Button
+            android:id="@+id/btn_restaurant2"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/restaurant3" />
+
+        <Button
+            android:id="@+id/btn_restaurant3"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/restaurant3" />
+
+        <Button
+            android:id="@+id/btn_restaurant4"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/restaurant4" />
+
+        <Button
+            android:id="@+id/btn_restaurant5"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/restaurant5" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="none"
+     xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    android:orientation="vertical" >
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="餐饮"
+        android:gravity="center_horizontal"
+        android:textSize="20sp"
+        android:layout_marginBottom="5dp"/>
+    	
+    	
+		<TextView 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_marginTop="5dp"
+		    android:textSize="16sp"
+		    android:text="酒店大堂吧提供香醇美酒、古雅香茗、各式软饮及丰富小食，是您商务洽谈，休闲放松的理想之地，位于一层的摩时餐吧，更是集合KTV、棋牌室、酒吧和餐厅于一体的绝佳娱乐场所，是嬉戏娱乐，增进感情的不二选择。同时酒店配有两间餐厅，分别为巴厘巴厘餐厅和罗曼诺海鲜餐厅，另有全天24小时的客房送餐服务，随时感受方便快捷。"/>
+		<ImageView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:id="@+id/restaurant"
+        />
+		<TextView 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_marginTop="5dp"
+		    android:textSize="16sp"
+		    android:text="巴厘巴厘餐厅"/>
+		<TextView 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_marginTop="5dp"
+		    android:textSize="16sp"
+		    android:text="极具特色的东南亚风情餐厅，可容纳160人同时就餐，同时更配备了私密包房，满足您的不同就餐需求。典雅的就餐环境，新鲜的进口食材，泰国主厨的精心料理，使您不走出国门，就可以享受到地道的东南亚美食。"/>
+		<ImageView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:id="@+id/restaurant2"
+        android:layout_marginTop="10dp"
+        />
+		<TextView 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_marginTop="5dp"
+		    android:textSize="16sp"
+		    android:text="罗曼诺海鲜餐厅"/>
+		<TextView 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_marginTop="5dp"
+		    android:textSize="16sp"
+		    android:text="亚洲最大的海鲜自助餐厅之一，可容纳700人同时就餐的超大优雅环境，由30多年从业经验的香港行政总厨亲自把关，每日空运新鲜进口的生猛海鲜，汇聚世界各地的珍馐美味，为各位饕客提供完美的“舌尖”体验。"/>
+	</LinearLayout>
+</ScrollView>

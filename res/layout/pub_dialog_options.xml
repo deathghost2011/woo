@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+
+        <TextView
+            android:id="@+id/textDialogTitle"
+            style="@style/dialog_title_style"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="请选择" />
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/line_pop_list"
+            android:dividerHeight=".5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:listSelector="@color/transparent" >
+        </ListView>
+
+</LinearLayout>

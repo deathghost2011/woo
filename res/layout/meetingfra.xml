@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:gravity="center_horizontal"
+            android:text="会议和宴会"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/meeting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY" />
+
+        <ImageView
+            android:id="@+id/meeting2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="尊享顶级会议和宴会设施：\n
+*酒店一层4,000平米大宴会厅可随意分割为5个大小不等的宴会厅\n
+*酒店三层4,000平米无柱式大会议厅可以随意分割为7个大小不等的会议室\n
+*50间面积大小不一的多功能厅\n
+*实现所有会议室内高速WIFI覆盖\n
+*先进集束桌灯\n
+*顶级灯光和音响设备\n
+*直通会场的汽车电梯\n
+*极致的一站式会议管家服务\n"
+            android:textSize="16sp" />
+        <!--
+        <LinearLayout 
+    	    android:layout_width="match_parent"
+    	    android:layout_height="wrap_content"
+    	    android:orientation="horizontal">
+    	      <TextView 
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		     android:textSize="15sp"
+		     android:drawableLeft="@drawable/point_gray"
+		    />
+    	    <TextView 
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		     android:textSize="15sp"
+		    android:text="酒店一层4,000平米大宴会厅可随意分割为5个大小不等的宴会厅"/>
+    	</LinearLayout>
+    	<LinearLayout 
+    	    android:layout_width="match_parent"
+    	    android:layout_height="wrap_content"
+    	    android:orientation="horizontal">
+    	      <TextView 
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		     android:textSize="15sp"
+		     android:drawableLeft="@drawable/point_gray"
+		    />
+    	      <TextView 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		     android:textSize="15sp"
+		     
+		    android:text="酒店三层4,000平米无柱式大会议厅可以随意分割为7个大小不等的会议室"/>
+    	</LinearLayout>
+    	<LinearLayout 
+    	    android:layout_width="match_parent"
+    	    android:layout_height="wrap_content"
+    	    android:orientation="horizontal">
+    	    <TextView 
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		     android:textSize="15sp"
+		     android:drawableLeft="@drawable/point_gray"
+		    />
+    	    <TextView 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		     android:textSize="15sp"
+		    android:text="50间面积大小不一的多功能厅"/>
+    	</LinearLayout>
+    	<LinearLayout 
+    	    android:layout_width="match_parent"
+    	    android:layout_height="wrap_content"
+    	    android:orientation="horizontal">
+    	    <TextView 
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		     android:textSize="15sp"
+		     android:drawableLeft="@drawable/point_gray"
+		    />
+    	    <TextView 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		     android:textSize="15sp"
+		    android:text="实现所有会议室内高速WIFI覆盖"/>
+    	</LinearLayout>
+    	<LinearLayout 
+    	    android:layout_width="match_parent"
+    	    android:layout_height="wrap_content"
+    	    android:orientation="horizontal">
+    	     <TextView 
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		     android:textSize="15sp"
+		     android:drawableLeft="@drawable/point_gray"
+		    />
+    	     <TextView 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		     android:textSize="15sp"
+		    android:text="先进集束桌灯"/>
+    	</LinearLayout>
+    	<LinearLayout 
+    	    android:layout_width="match_parent"
+    	    android:layout_height="wrap_content"
+    	    android:orientation="horizontal">
+    	     <TextView 
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		     android:textSize="15sp"
+		     android:drawableLeft="@drawable/point_gray"
+		    />
+    	     <TextView 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		     android:textSize="15sp"
+		    android:text="顶级灯光和音响设备"/>
+    	</LinearLayout>
+    	<LinearLayout 
+    	    android:layout_width="match_parent"
+    	    android:layout_height="wrap_content"
+    	    android:orientation="horizontal">
+    	     <TextView 
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		     android:textSize="15sp"
+		     android:drawableLeft="@drawable/point_gray"
+		    />
+    	     <TextView 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		     android:textSize="15sp"
+		    android:text="直通会场的汽车电梯"/>
+    	</LinearLayout>
+    	<LinearLayout 
+    	    android:layout_width="match_parent"
+    	    android:layout_height="wrap_content"
+    	    android:orientation="horizontal">
+    	     <TextView 
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		     android:textSize="15sp"
+		     android:drawableLeft="@drawable/point_gray"
+		    />
+    	     	<TextView 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		     android:textSize="15sp"
+		    android:text="极致的一站式会议管家服务"/>
+    	</LinearLayout>-->
+    </LinearLayout>
+
+</ScrollView>

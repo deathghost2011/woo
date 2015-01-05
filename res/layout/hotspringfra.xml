@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="none"
+     xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    android:orientation="vertical" >
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="嘉佑温泉"
+        android:gravity="center_horizontal"
+        android:textSize="20sp"
+        android:layout_marginBottom="5dp"/>
+    	
+    	
+		<ImageView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:id="@+id/hotspring"
+        />
+		<TextView 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_marginTop="10dp"
+		    android:textSize="16sp"
+		    android:text="嘉佑温泉与酒店之间由彩虹桥连接，作为中国最独特的北宋体验式主题温泉，总建筑面积达到20,000平米。借鉴著名的大江户温泉经营模式，以宋文化为主题，全实木建构，还原《清明上河图》历史实景，使您浸泡在历史的长河之中。“客来争解带，万劫付一洗”，诚邀您一起穿越时空体验北宋风情。\n嘉佑温泉与酒店之间由彩虹桥连接，作为中国最独特的北宋体验式主题温泉，总建筑面积达到20,000平米。借鉴著名的大江户温泉经营模式，以宋文化为主题，全实木建构，还原《清明上河图》历史实景，使您浸泡在历史的长河之中。“客来争解带，万劫付一洗”，诚邀您一起穿越时空体验北宋风情。\n嘉佑温泉与酒店之间由彩虹桥连接，作为中国最独特的北宋体验式主题温泉，总建筑面积达到20,000平米。借鉴著名的大江户温泉经营模式，以宋文化为主题，全实木建构，还原《清明上河图》历史实景，使您浸泡在历史的长河之中。“客来争解带，万劫付一洗”，诚邀您一起穿越时空体验北宋风情。"/>
+		<!-- <TextView 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_marginTop="5dp"
+		    android:textSize="16sp"
+		    android:text="一层： “大巷口”还原《清明上河图》历史实景，并设有多家特色餐厅及商铺，集吃喝玩乐与一体，特有的自酿鲜啤和各种小吃刺激着您的味蕾。在繁忙的工作之余，何不穿着宋式浴袍，与我们一起畅游在“北宋时代”。"/>
+		<TextView 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_marginTop="5dp"
+		    android:textSize="16sp"
+		    android:text="二层：流连于空间而忘却了时间。在二层设置了独特的裸汤区，并配有不同档次的按摩间及私密VIP包房，为不同的人群提供更多的选择。洗去一身的疲惫，再享受一下纯正的按摩理疗，使您的身心达到完全的空灵享受。"/>
+		<TextView 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_marginTop="5dp"
+		    android:textSize="16sp"
+		    android:text="三层：情境合一的露天屋顶汤屋，配以静谧的山水景观，完全的私密空间，轻松优雅的环境，营造出情境合一、身心愉悦的温泉体验。"/>
+		<TextView 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_marginTop="10dp"
+		    android:textSize="18sp"
+		    android:text="丰富浴种"/>
+		<TextView 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:textSize="16sp"
+		    android:layout_marginTop="5dp"
+		    android:text="绢浴：1/100ｍｍ的超细微气泡充满整个浴槽、细微的气泡破裂时起到按摩效果。"/>
+		<TextView 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_marginTop="5dp"
+		    android:textSize="16sp"
+		    android:text="鱼疗：非常珍惜的鱼类吸食皮肤角质。"/>
+		<TextView 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:textSize="16sp"
+		    android:layout_marginTop="5dp"
+		    android:text="打濑浴：温泉冲打在身体上，通过敲打，使肌肉放松、温暖，促进血液循环。"/>
+		<TextView 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:textSize="16sp"
+		    android:layout_marginTop="5dp"
+		    android:text="岩盘浴：躺在捂热的天然岩石上，达到排汗效果的健康疗法。"/>
+		<TextView 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:textSize="16sp"
+		    android:layout_marginTop="5dp"
+		    android:text="电气浴：将微量电波对于身体患处，达到调节身体、缓解病痛的效果。"/>
+		<TextView 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:textSize="16sp"
+		    android:layout_marginTop="5dp"
+		    android:text="炭酸浴：将碳酸气体溶解在温泉中，使皮肤充分吸收，达到软化血管，促进新陈代谢，增进免疫力的效果。"/> -->
+	</LinearLayout>
+</ScrollView>

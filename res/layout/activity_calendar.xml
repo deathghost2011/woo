@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+    
+    <!-- <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@null"
+        android:visibility="gone" >
+
+        <include layout="@layout/pub_activity_header" />
+        
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/relativeLayout1"
+        android:layout_centerHorizontal="true"
+        android:background="@color/title_line" /> -->
+    
+    <RelativeLayout
+        android:id="@+id/bar"
+        android:layout_below="@+id/view1"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@color/blue" ><!-- #faf9f7  #00ffffff -->
+
+        <TextView
+            android:id="@+id/txt_title_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="2014年4月"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+        
+        <Button android:id="@+id/btn_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/btn_ok"/>
+
+    </RelativeLayout>
+    
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/bar"
+        android:layout_centerHorizontal="true"
+        android:background="@color/title_line" />
+    
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_below="@+id/view2"
+        android:layout_width="fill_parent"
+        android:layout_height="280dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/white" >
+    </android.support.v4.view.ViewPager>
+    
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/viewpager"
+        android:visibility="gone"
+        android:orientation="vertical" >
+        
+		<RelativeLayout
+	        android:id="@+id/timeLayout"
+	        android:layout_width="match_parent"
+	        android:layout_height="40dp"
+	        android:background="#ffffff" >
+	
+	        <TextView
+	            android:id="@+id/textView2"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentLeft="true"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="66dp"
+	            android:text="小时"
+	            android:textColor="@color/calendar_date_text_black"
+	            android:textSize="16sp"
+	            android:textStyle="bold" />
+	
+	        <TextView
+	            android:id="@+id/textView3"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignBaseline="@+id/textView2"
+	            android:layout_alignBottom="@+id/textView2"
+	            android:layout_alignParentRight="true"
+	            android:layout_marginRight="66dp"
+	            android:text="分钟"
+	            android:textColor="@color/calendar_date_text_black"
+	            android:textSize="16sp"
+	            android:textStyle="bold" />
+	    </RelativeLayout>
+		    
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="120dp"
+            android:background="@color/white" >
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="5dp"
+                android:background="@drawable/pub_timepicker_frame_bg" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:weightSum="2" >
+
+                    <!-- 小时 -->
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1" >
+
+                        <ListView
+                            android:id="@+id/list_hour"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:choiceMode="none"
+                            android:divider="@null"
+                            android:scrollbars="none"
+                            android:transcriptMode="normal" >
+                        </ListView>
+                    </LinearLayout>
+                    
+                    <View
+                        android:layout_width="3dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/blue" />
+
+                    <!-- 分钟 -->
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1" >
+
+                        <ListView
+                            android:id="@+id/list_minute"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:choiceMode="none"
+                            android:divider="@null"
+                            android:scrollbars="none"
+                            android:transcriptMode="normal" >
+                        </ListView>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" >
+
+                    <LinearLayout
+                        android:id="@+id/list_line"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:background="@drawable/pub_timepicker_selection_frame"
+                        android:orientation="horizontal" >
+                    </LinearLayout>
+                </RelativeLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

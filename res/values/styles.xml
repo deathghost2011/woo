@@ -1,0 +1,196 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+ <style name="header">
+        <item name="android:background">@drawable/bg_header</item>
+        <item name="android:paddingLeft">8.0dip</item>
+        <item name="android:paddingRight">8.0dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">48.0dip</item>
+    </style>
+
+    <style name="header_edit_search">
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:hint">@string/search</item>
+        <item name="android:background">@drawable/edit_bg</item>
+    </style>
+    
+    <style name="headerTextStyle">
+        <item name="android:textSize">22.0sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxWidth">230.0dip</item>
+        <item name="android:shadowColor">#73804055</item>
+        <item name="android:shadowDx">2.0</item>
+        <item name="android:shadowDy">-2.0</item>
+        <item name="android:shadowRadius">2.0</item>
+    </style>
+    
+    <style name="grid_text_style_big">
+        <item name="android:textSize">22.0sp</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:shadowColor">#73804055</item>
+        <item name="android:shadowDx">2.0</item>
+        <item name="android:shadowDy">-2.0</item>
+        <item name="android:shadowRadius">2.0</item>
+    </style>
+    
+    <style name="grid_text_style_small">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:shadowColor">#73804055</item>
+        <item name="android:shadowDx">2.0</item>
+        <item name="android:shadowDy">-2.0</item>
+        <item name="android:shadowRadius">2.0</item>
+    </style>
+
+    <!-- 图片轮播 -->
+    <style name="dot_style">
+        <item name="android:layout_width">5dip</item>
+        <item name="android:layout_height">5dip</item>
+        <item name="android:background">@drawable/dot_normal</item>
+        <item name="android:layout_marginLeft">1.5dip</item>
+        <item name="android:layout_marginRight">1.5dip</item>
+    </style>
+
+    <!-- tab栏上的按钮样式 -->
+    <style name="MyTabButton">
+        <!-- <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/tab_text_color_selector</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_width">0.0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_marginLeft">0.70000005dip</item>
+        <item name="android:layout_marginRight">0.70000005dip</item>
+        -->
+    </style>
+    <!-- 标题 -->
+    <style name="item_title">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_dark_grey</item>
+    </style>
+    <!-- 内容 -->
+    <style name="item_light">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text_light_grey</item>
+    </style>
+
+    <style name="item_price">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/btn_bg</item>
+    </style>
+    <!-- 表单 -->
+    <style name="item_form_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    
+    <style name="item_form_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/text_dark_grey</item>
+    </style>
+
+    <style name="item_form_edit">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:background">@drawable/edit_bg</item>
+    </style>
+    
+    <style name="item_form_btn">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/btn_bg</item>
+    </style>
+
+    <!-- 常规Dialog样式，悬浮、背景透明 -->
+    <style name="CommonDialog" parent="@android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        
+		<!-- 文本颜色 -->
+        <item name="android:textColor">@color/white</item>
+        <!-- 光标样式 -->
+        <item name="android:textCursorDrawable">@drawable/my_cursor</item>
+    </style>
+    
+    <!-- 对话框字体 -->
+    <style name="dialog_title_style">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">@color/blue</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <!-- Calender dialog style -->
+    <style name="calender_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <!-- 边框 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 半透明 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 背景透明 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 模糊 -->
+    </style>
+    
+    <style name="line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">@color/grey</item>
+    </style>
+</resources>

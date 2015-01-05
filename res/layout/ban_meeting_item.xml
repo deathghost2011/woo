@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="10dp" >
+
+    <ImageView
+        android:id="@+id/item_icon"
+        android:layout_width="130dp"
+        android:layout_height="110dp"
+        android:scaleType="fitXY"
+        android:background="@drawable/meet_pic1" />
+
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="供应国际会议厅"
+            android:layout_marginTop="10dp"
+            android:textSize="@dimen/text_size_16" />
+
+        <ImageView
+            android:id="@+id/lijishenqing"
+            android:layout_width="90dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/apply_btn1" />
+
+</LinearLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical" >
+
+    <LinearLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        >
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/canting" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:gravity="center_horizontal"
+            android:text="罗曼诺海鲜餐厅"
+            android:textSize="@dimen/text_size_18" />
+
+        <ScrollView android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+        <TextView
+            android:id="@+id/describe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="10dp"
+            android:text="顶高106米，由其时意大利著名的修建师勃鲁涅斯基策画，穹顶的基部呈八角平面形，平面直径达42.2米。
+　　基座以上是各面都带有圆窗的鼓座。穹顶的构造分表里两层，内部由8根主肋和16根间肋组成，结构公道，受力匀称。内部墙壁上有一幅著名的壁画《最后的审判》。同时，职员可以议定环廊抵达穹顶内部。
+　　在中央穹顶的外围，各多边形的祭坛上也有一些半穹形，与上面的穹顶上下呼应。它的外墙以黑、绿、粉色条纹大理石砌成各类格板，上面加上精良的镌刻、马赛克和石刻花窗，显现出特别富丽的品格。整个穹顶，总体外面稳健端庄、比例融洽、没有飞拱和小尖塔之类的器材，程度线条清楚。
+　　穹顶是文艺中兴早期修建的代表作，也是佛罗伦萨都会修建的标记性修建，它把文艺中兴时期的屋顶方法和哥特式修建品格完好地连合起来了，有清楚的过渡特性。除大教堂以外，整个修建群中的钟塔和洗会堂也是很精良的修建，钟塔高88 米，分4层，13.7米见方；建于1290年的洗会堂高约31.4米，修建外面端庄平衡，以白、绿色大理石饰面。"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/text_size_16" />
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>
+</LinearLayout>

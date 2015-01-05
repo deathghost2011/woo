@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="holo_blue">#FF33E5B5</color>
+	<color name="slid_bg">#F4F4F4</color>
+	<color name="slid_text_check">#E25F27</color>
+	<color name="gray">#cccccc</color>
+	<color name="main_text_color">#ff666666</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#ffffff</color>
+    <color name="pink">#FF9966</color>
+    <color name="red">#CC3333</color>
+    <color name="blue">#66CCCC</color>
+    <color name="gold">#aa965b</color>
+    <color name="puple">#CC99CC</color>
+    <color name="yellow">#FFFF99</color>
+    <color name="dark_puple">#CC9999</color>
+    <color name="grey">#999999</color>
+    <color name="light_grey">#66CCCC99</color>
+    <color name="orange">#FF9966</color>
+    <color name="act_bg">#F7F4F0</color>
+    
+    <color name="text_dark_grey">#333333</color>
+    <color name="text_light_grey">#666666</color>
+    
+    <!-- calender -->
+    <color name="title_line">#cbcbcb</color>
+    <color name="calendar_date_text_gray">#989898</color>
+    <color name="calendar_date_text_black">#505050</color>
+    <color name="calendar_date_cell_gray">#fafafa</color>
+    <color name="calendar_date_cell_green">#CCFFFF</color>
+    <color name="calendar_date_text_red">#FF0033</color>
+    <color name="calendar_date_text_blue_deep">#0066CC</color>
+    <color name="calendar_date_text_light_red">#FF6666</color>
+    <color name="calendar_time_picker_item_text_gray">#aaaaaa</color>
+    <!-- 会议邀请的标签引导分割条颜色 -->
+    <color name="meeting_title_guide">#993333</color>
+    <color name="black">#000000</color>
+    <!-- 分割条颜色 -->
+    <color name="divider_color">#d9d9d9</color>
+    <!-- 早餐类型的背景 -->
+    <color name="meal_item_bg">#ececec</color>
+</resources>

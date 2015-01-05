@@ -1,0 +1,881 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/act_bg"
+    android:orientation="vertical" >
+
+    <include layout="@layout/include_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/select_jiudian"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/pull_card_whole"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:text="选择酒店"
+                    android:textColor="@color/gold"
+                    android:textSize="@dimen/text_size_18" />
+
+                <TextView
+                    android:id="@+id/select_jiudian_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:text="请选择"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/text_size_18" />
+
+                <Button
+                    style="@style/item_form_btn"
+                    android:layout_width="50dp"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/icon_arrow_down" />
+            </LinearLayout>
+
+            <!-- =============================== -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <View
+                    android:id="@+id/v"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_centerHorizontal="true" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_toLeftOf="@+id/v"
+                    android:layout_toStartOf="@+id/v"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@color/pink"
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:text="入住日期"
+                        android:textSize="@dimen/text_size_18" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_start"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/pull_card_whole"
+                        android:gravity="center" >
+
+                        <LinearLayout
+                            android:id="@+id/ll"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:id="@+id/startW"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="周三"
+                                android:textColor="@color/orange"
+                                android:textSize="@dimen/text_size_18" />
+
+                            <TextView
+                                android:id="@+id/startM"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="10月"
+                                android:textColor="@color/grey"
+                                android:textSize="@dimen/text_size_18" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/startD"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/ll"
+                            android:layout_toRightOf="@+id/ll"
+                            android:text="29"
+                            android:textColor="@color/orange"
+                            android:textSize="@dimen/text_size_32"
+                            android:textStyle="normal" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_toEndOf="@+id/v"
+                    android:layout_toRightOf="@+id/v"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@color/pink"
+                        android:gravity="center_horizontal"
+                        android:padding="4dp"
+                        android:text="退房日期"
+                        android:textSize="@dimen/text_size_18" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_end"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/pull_card_whole"
+                        android:gravity="center" >
+
+                        <LinearLayout
+                            android:id="@+id/ll2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:id="@+id/endW"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="周二"
+                                android:textColor="@color/orange"
+                                android:textSize="@dimen/text_size_18" />
+
+                            <TextView
+                                android:id="@+id/endM"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="11月"
+                                android:textColor="@color/grey"
+                                android:textSize="@dimen/text_size_18" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/endD"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/ll2"
+                            android:layout_toRightOf="@+id/ll2"
+                            android:text="4"
+                            android:textColor="@color/orange"
+                            android:textSize="@dimen/text_size_32"
+                            android:textStyle="normal" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- =============================== -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/pull_card_whole"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp" >
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="成人"
+                            android:textSize="@dimen/text_size_16" />
+
+                        <Button
+                            android:id="@+id/chengren_desc"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/btn_desc" />
+
+                        <TextView
+                            android:id="@+id/chengren_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:text="1"
+                            android:textColor="@color/text_dark_grey"
+                            android:textSize="@dimen/text_size_24" />
+
+                        <Button
+                            android:id="@+id/chengren_add"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/btn_add" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/pull_card_whole"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp" >
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="儿童"
+                            android:textSize="@dimen/text_size_16" />
+
+                        <Button
+                            android:id="@+id/ertong_desc"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/btn_desc" />
+
+                        <TextView
+                            android:id="@+id/ertong_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:text="0"
+                            android:textColor="@color/text_dark_grey"
+                            android:textSize="@dimen/text_size_24" />
+
+                        <Button
+                            android:id="@+id/ertong_add"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/btn_add" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/pull_card_whole"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp" >
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="房间数"
+                            android:textSize="@dimen/text_size_16" />
+
+                        <Button
+                            android:id="@+id/fangjian_desc"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/btn_desc" />
+
+                        <TextView
+                            android:id="@+id/fangjian_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:text="1"
+                            android:textColor="@color/text_dark_grey"
+                            android:textSize="@dimen/text_size_24" />
+
+                        <Button
+                            android:id="@+id/fangjian_add"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/btn_add" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/select_kefang"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:visibility="gone"
+                        android:background="@drawable/pull_card_whole"
+                        android:paddingLeft="5dp" >
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:text="@string/room_lvl"
+                            android:textSize="@dimen/text_size_16" />
+
+                        <TextView
+                            android:id="@+id/select_kefang_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="@string/room_normal"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/text_size_14" />
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/icon_arrow_down" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/pull_card_whole"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:text="浴袍："
+                        android:textSize="@dimen/text_size_18" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/divider_color" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="大"
+                                android:textSize="@dimen/text_size_16" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:singleLine="true"
+                                android:text=""
+                                android:textSize="@dimen/text_size_16" />
+
+                            <Button
+                                android:id="@+id/yupao_da_desc"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/btn_desc" />
+
+                            <TextView
+                                android:id="@+id/yupao_da_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:text="0"
+                                android:textColor="@color/text_dark_grey"
+                                android:textSize="@dimen/text_size_24" />
+
+                            <Button
+                                android:id="@+id/yupao_da_add"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/btn_add" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="中"
+                                android:textSize="@dimen/text_size_16" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:singleLine="true"
+                                android:text=""
+                                android:textSize="@dimen/text_size_16" />
+
+                            <Button
+                                android:id="@+id/yupao_zhong_desc"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/btn_desc" />
+
+                            <TextView
+                                android:id="@+id/yupao_zhong_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:text="0"
+                                android:textColor="@color/text_dark_grey"
+                                android:textSize="@dimen/text_size_24" />
+
+                            <Button
+                                android:id="@+id/yupao_zhong_add"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/btn_add" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/divider_color" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="小"
+                                android:textSize="@dimen/text_size_16" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:singleLine="true"
+                                android:text=""
+                                android:textSize="@dimen/text_size_16" />
+
+                            <Button
+                                android:id="@+id/yupao_xiao_desc"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/btn_desc" />
+
+                            <TextView
+                                android:id="@+id/yupao_xiao_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:text="0"
+                                android:textColor="@color/text_dark_grey"
+                                android:textSize="@dimen/text_size_24" />
+
+                            <Button
+                                android:id="@+id/yupao_xiao_add"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/btn_add" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="儿童"
+                                android:textSize="@dimen/text_size_16" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:singleLine="true"
+                                android:text=""
+                                android:textSize="@dimen/text_size_16" />
+
+                            <Button
+                                android:id="@+id/yupao_ertong_desc"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/btn_desc" />
+
+                            <TextView
+                                android:id="@+id/yupao_ertong_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:text="0"
+                                android:textColor="@color/text_dark_grey"
+                                android:textSize="@dimen/text_size_24" />
+
+                            <Button
+                                android:id="@+id/yupao_ertong_add"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/btn_add" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/pull_card_whole"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:text="拖鞋："
+                        android:textSize="@dimen/text_size_18" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/divider_color" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="大"
+                                android:textSize="@dimen/text_size_16" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:singleLine="true"
+                                android:text=""
+                                android:textSize="@dimen/text_size_16" />
+
+                            <Button
+                                android:id="@+id/tuoxie_da_desc"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/btn_desc" />
+
+                            <TextView
+                                  android:id="@+id/tuoxie_da_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:text="0"
+                                android:textColor="@color/text_dark_grey"
+                                android:textSize="@dimen/text_size_24" />
+
+                            <Button
+                                  android:id="@+id/tuoxie_da_add"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/btn_add" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="中"
+                                android:textSize="@dimen/text_size_16" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:singleLine="true"
+                                android:text=""
+                                android:textSize="@dimen/text_size_16" />
+
+                            <Button
+                                  android:id="@+id/tuoxie_zhong_desc"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/btn_desc" />
+
+                            <TextView
+                                android:id="@+id/tuoxie_zhong_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:text="0"
+                                android:textColor="@color/text_dark_grey"
+                                android:textSize="@dimen/text_size_24" />
+
+                            <Button
+                                android:id="@+id/tuoxie_zhong_add"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/btn_add" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/divider_color" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="小"
+                                android:textSize="@dimen/text_size_16" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:singleLine="true"
+                                android:text=""
+                                android:textSize="@dimen/text_size_16" />
+
+                            <Button
+                                  android:id="@+id/tuoxie_xiao_desc"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/btn_desc" />
+
+                            <TextView
+                                  android:id="@+id/tuoxie_xiao_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:text="0"
+                                android:textColor="@color/text_dark_grey"
+                                android:textSize="@dimen/text_size_24" />
+
+                            <Button
+                                  android:id="@+id/tuoxie_xiao_add"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/btn_add" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="儿童"
+                                android:textSize="@dimen/text_size_16" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:singleLine="true"
+                                android:text=""
+                                android:textSize="@dimen/text_size_16" />
+
+                            <Button
+                                android:id="@+id/tuoxie_ertong_desc"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/btn_desc" />
+
+                            <TextView
+                                 android:id="@+id/tuoxie_ertong_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:text="0"
+                                android:textColor="@color/text_dark_grey"
+                                android:textSize="@dimen/text_size_24" />
+
+                            <Button
+                                android:id="@+id/tuoxie_ertong_add"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/btn_add" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/pull_card_whole"
+                android:visibility="gone" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="@string/vip_lvl"
+                    android:textSize="@dimen/text_size_18" />
+
+                <TextView
+                    android:id="@+id/vip_lvl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/vip_normal"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/text_size_18" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/icon_arrow_down" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_search"
+                style="@style/headerTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/btn_serch"
+                android:text="" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/img_ruzhu" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

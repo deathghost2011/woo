@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/header" >
+
+    <Button
+        android:id="@+id/btn_left"
+        android:layout_width="32dp"
+        android:layout_height="24dp"
+        android:layout_centerVertical="true"
+        android:background="@drawable/ic_menu" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" >
+
+        <TextView
+            android:id="@+id/pub_title"
+            style="@style/headerTextStyle"
+            android:layout_centerInParent="true"
+            android:text="社会山会议度假酒店"
+            android:visibility="visible" />
+        
+        <ImageView android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_header"
+            android:visibility="gone"
+            />
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/btn_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/btn_login1"
+        android:visibility="visible" />
+
+</RelativeLayout>
