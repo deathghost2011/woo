@@ -26,9 +26,9 @@ public class ZaoCanJson {
 	  //返回json结果
 			public  String ReturnJsonStr()
 			{
-			   StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectDiskReads().detectDiskWrites().detectNetwork().penaltyLog().build());
-		       StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder
-		       ().detectLeakedSqlLiteObjects().detectLeakedClosableObjects().penaltyLog().penaltyDeath ().build());
+//			   StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectDiskReads().detectDiskWrites().detectNetwork().penaltyLog().build());
+//		       StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder
+//		       ().detectLeakedSqlLiteObjects().detectLeakedClosableObjects().penaltyLog().penaltyDeath ().build());
 			
 			
 			     /*读返回数据*/  

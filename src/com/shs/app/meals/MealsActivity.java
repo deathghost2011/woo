@@ -45,9 +45,14 @@ public class MealsActivity extends FragmentActivity implements OnClickListener {
 		title = (TextView) this.findViewById(R.id.pub_title);
 		title.setText("客房送餐");
 		initTitleView();
-		initViewPager();
+		
 	}
-
+@Override
+protected void onStart() {
+	// TODO Auto-generated method stub
+	super.onStart();
+	initViewPager();
+}
 	/**
 	 * 初始化选项卡菜单
 	 */
