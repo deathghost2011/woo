@@ -65,9 +65,15 @@ public class DetailMealsActivity extends Activity implements OnClickListener{
 		zongjia= (TextView) this.findViewById(R.id.zongjia);
 		item_icon= (ImageView) this.findViewById(R.id.item_icon);
 		inition();
-		GetZaoCanList();
 	}
-	
+	@Override
+	protected void onStart() {
+		// TODO Auto-generated method stub
+		super.onStart();
+		 System.out.println("111111post---");
+		GetZaoCanList();
+		 System.out.println("111111post====");
+	}
 	//加载页面
 	private void  inition()
 	{
