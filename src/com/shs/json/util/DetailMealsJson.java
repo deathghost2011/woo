@@ -26,9 +26,9 @@ public class DetailMealsJson {
 	  //返回json结果
 	public  String ReturnJsonStr()
 	{
-	   StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectDiskReads().detectDiskWrites().detectNetwork().penaltyLog().build());
-       StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder
-       ().detectLeakedSqlLiteObjects().detectLeakedClosableObjects().penaltyLog().penaltyDeath ().build());
+//	   StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectDiskReads().detectDiskWrites().detectNetwork().penaltyLog().build());
+//       StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder
+//       ().detectLeakedSqlLiteObjects().detectLeakedClosableObjects().penaltyLog().penaltyDeath ().build());
 	
 	
 	     /*读返回数据*/  
@@ -38,6 +38,7 @@ public class DetailMealsJson {
        /* 
         * NameValuePair实现请求参数的封装 
        */  
+       System.out.println("111111post");
        List <NameValuePair> params = new ArrayList <NameValuePair>();  
        params.add(new BasicNameValuePair("Token", PublicClass.getToken()));  
        params.add(new BasicNameValuePair("group_id", ZaoCanClass.getGroup_id()));
