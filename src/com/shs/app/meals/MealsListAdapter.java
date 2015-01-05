@@ -153,6 +153,7 @@ public class MealsListAdapter extends BaseAdapter {
 				ZaoCanClass.setPrice(viewHolder.item_price.getText().toString().replace("￥", ""));
 				ZaoCanClass.setTitle(viewHolder.type.getText().toString());
 				ZaoCanClass.setImageurl(viewHolder.imgurl.getText().toString());
+				//save
 				Intent intent = new Intent(mContext,
 						DetailMealsActivity.class);
 				mContext.startActivity(intent);
