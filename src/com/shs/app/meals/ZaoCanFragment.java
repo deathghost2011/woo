@@ -81,55 +81,59 @@ public class ZaoCanFragment extends Fragment {
 		});
 		return rootView;
 	}
+	//获取早餐列表1
+	private void GetZaoCanList() {
+		
+	}
 	
 
 	//获取早餐列表1
-	private void GetZaoCanList()
-	{
-        String eeroinfo="";
-    	List<JSONObject> data_list = new ArrayList<JSONObject>();
-		PublicClass.setPATH(Manager.zaocan1);
-		PublicClass.setToken(Manager.token);
-
-	    resultClass= zaocan.ReturnJsonStr();
-		if(resultClass.equals(""))
-		{
-			 eeroinfo="无法连接服务器，请确认网络是否连接！";
-		}
-		else
-		{
-			try {
-				JSONObject result = new JSONObject( resultClass);  
-				String error = result.getString("error");  
-			
-				if(!error.equals("0"))
-				{
-					 String errorinfo = result.getString("error_info");  
-					 eeroinfo=errorinfo;
-				}
-				else
-				{
-					
-					
-					JSONObject data = result.getJSONObject("data");
-					JSONArray datalist = data.getJSONArray("datalist");
-					
-					for(int i=0;i<datalist.length();i++)
-					{
-						JSONObject datevalue = (JSONObject) datalist.opt(i);
-						data_list.add(datevalue);
-					}
-					
-					    listView = (ListView) rootView.findViewById(R.id.list);
-					    adapter = new MealsListAdapter(getActivity());
-						adapter.setList(data_list);
-						listView.setAdapter(adapter);
-					
-				}
-				
-			} catch (JSONException e) {
-				 eeroinfo="无法连接服务器，请确认网络是否连接！";
-			}
-		}
-	}
+//	private void GetZaoCanList()
+//	{
+//        String eeroinfo="";
+//    	List<JSONObject> data_list = new ArrayList<JSONObject>();
+//		PublicClass.setPATH(Manager.zaocan1);
+//		PublicClass.setToken(Manager.token);
+//
+//	    resultClass= zaocan.ReturnJsonStr();
+//		if(resultClass.equals(""))
+//		{
+//			 eeroinfo="无法连接服务器，请确认网络是否连接！";
+//		}
+//		else
+//		{
+//			try {
+//				JSONObject result = new JSONObject( resultClass);  
+//				String error = result.getString("error");  
+//			
+//				if(!error.equals("0"))
+//				{
+//					 String errorinfo = result.getString("error_info");  
+//					 eeroinfo=errorinfo;
+//				}
+//				else
+//				{
+//					
+//					
+//					JSONObject data = result.getJSONObject("data");
+//					JSONArray datalist = data.getJSONArray("datalist");
+//					
+//					for(int i=0;i<datalist.length();i++)
+//					{
+//						JSONObject datevalue = (JSONObject) datalist.opt(i);
+//						data_list.add(datevalue);
+//					}
+//					
+//					    listView = (ListView) rootView.findViewById(R.id.list);
+//					    adapter = new MealsListAdapter(getActivity());
+//						adapter.setList(data_list);
+//						listView.setAdapter(adapter);
+//					
+//				}
+//				
+//			} catch (JSONException e) {
+//				 eeroinfo="无法连接服务器，请确认网络是否连接！";
+//			}
+//		}
+//	}
 }
