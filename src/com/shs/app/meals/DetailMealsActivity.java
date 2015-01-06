@@ -25,9 +25,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 public class DetailMealsActivity extends Activity implements OnClickListener{
@@ -106,13 +108,27 @@ public class DetailMealsActivity extends Activity implements OnClickListener{
 		case R.id.tianjia:
 			//save
 //			System.out.println(getIntent().getStringExtra("title"));//名字
+			System.out.println(listView.getChildCount()+"----");
+			for (int i = 0; i < MealsDetailListAdapter.radiobuttonmap.size(); i++) {
+				if(MealsDetailListAdapter.radiobuttonmap.get(i)!=null&&MealsDetailListAdapter.radiobuttonmap.get(i)==true){
+					JSONObject jsonObject=listzaocan.get(i);
+					
+					try {
+						System.out.println(jsonObject.getString("Headname")+"---"+jsonObject.getString("name"));
+					} catch (JSONException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			};
 			manager.SqlSave(this, new ZaoCan(ZaoCanClass.getImageurl(),getIntent().getStringExtra("title"),ZaoCanClass.getPrice(),etTotal.getText().toString(),"未标记",false));
-			Intent intent = new Intent(this, ShopingCardActivity.class);
-			this.startActivity(intent);
+//			Intent intent = new Intent(this, ShopingCardActivity.class);
+//			this.startActivity(intent);
 			break;
 			
 		}
 	}
+	  List<JSONObject> listzaocan;
 	Mananger manager=new Mananger();
 	//获取早餐列表
 		private void GetZaoCanList()
@@ -121,7 +137,7 @@ public class DetailMealsActivity extends Activity implements OnClickListener{
 			
 	        String eeroinfo="";
 	    	JSONObject nametp = null ;
-	        List<JSONObject> listzaocan = new ArrayList<JSONObject>();
+	        listzaocan = new ArrayList<JSONObject>();
 			PublicClass.setPATH(Manager.zaocan);
 			PublicClass.setToken(Manager.token);
             String headname="";

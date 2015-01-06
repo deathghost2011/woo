@@ -1,7 +1,10 @@
 package com.shs.app.meals;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.TreeMap;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -40,6 +43,7 @@ public class MealsDetailListAdapter extends BaseAdapter {
 
 	public MealsDetailListAdapter(Context mContext) {
 		this.mContext = mContext;
+		radiobuttonmap=new HashMap<Integer, Boolean>();
 	}
 
 	@Override
@@ -56,13 +60,16 @@ public class MealsDetailListAdapter extends BaseAdapter {
 	public long getItemId(int position) {
 		return position;
 	}
-
+List<Integer > li=new ArrayList<Integer>();
+TreeMap< Integer , Integer> hashMap=new TreeMap<Integer, Integer>();
+public static HashMap< Integer , Boolean> radiobuttonmap;
 	@Override
 	public View getView(final int position, View convertView, ViewGroup parent) {
 		ViewHolder viewHolder = null;
 		RadioButton radioButton = new RadioButton(mContext);
+		radioButton.setId(0x1c1b3);
 		RadioGroup radiogroup= new RadioGroup(mContext);
-		if (convertView == null) {
+//		if (convertView == null) {
 			viewHolder = new ViewHolder();
 			convertView = LayoutInflater.from(mContext).inflate(
 					R.layout.meals_detail_list_item, null);
@@ -77,23 +84,24 @@ public class MealsDetailListAdapter extends BaseAdapter {
 	
 		
 			convertView.setTag(viewHolder);
-		} else {
-			viewHolder = (ViewHolder) convertView.getTag();
-		}
-		JSONObject itms = list.get(position);
-		
-		
+//		} else {
+//			viewHolder = (ViewHolder) convertView.getTag();
+//		}
+		final JSONObject itms = list.get(position);
+		//拿到当前的jsonObject
+//		System.out.println(list.get(position));
 		 viewHolder.typeid.setVisibility(View.GONE);
-		
+		//隐藏两个textview
 		 viewHolder.idshicai.setVisibility(View.GONE);
 	
 		 try {
-			 
 		  viewHolder.type.setText(itms.getString("Headname"));
+		  //设置type
 			if(itms.getBoolean("IsType") == true)
 			 {
-			
-		  
+//			判断istype为true
+//				li.add(position);
+				hashMap.put(position, position);
     			viewHolder.type.setVisibility(View.VISIBLE);
     	
     		  	typelayout.setVisibility(View.GONE);
@@ -104,33 +112,80 @@ public class MealsDetailListAdapter extends BaseAdapter {
 			 }
 			else
 			{
-			   
+//				判断istype为fasle
 				 viewHolder.type.setVisibility(View.GONE);
 				 typelayout.setVisibility(View.VISIBLE);	
 				 
 			 
-				 if(itms.getBoolean("Iscorr") == true)
+				 if(itms.getBoolean("Iscorr") == false)
 				 {
+					//true多选 
 					 String name=itms.getString("name");  
-					
 					 radioButton.setVisibility(View.GONE);
 				     viewHolder.breakfast.setText(name);
 				     viewHolder.checkBox.setVisibility(View.VISIBLE);
-				
+				     viewHolder.checkBox.setOnClickListener(new OnClickListener() {
+							
+							@Override
+							public void onClick(View v) {
+								// TODO Auto-generated method stub
+								System.out.println("viewHolder*-----"+position);
+							}
+						  });
 				 }
 				 else
-				 {
+				 {//false单选
+					 if(radiobuttonmap.get(position)==null){
+						 radiobuttonmap.put(position, false);
+					 }
 					  String name=itms.getString("name");  
 				      viewHolder.checkBox.setVisibility(View.GONE);
 					  viewHolder.breakfast.setText(name);
+					  if(radiobuttonmap.get(position)){
+						  radioButton.setChecked(true);
+					  }else{
+						  radioButton.setChecked(false);
+					  }
+					  radioButton.setOnClickListener(new OnClickListener() {
+						
+						@Override
+						public void onClick(View v) {
+							// TODO Auto-generated method stub
+//							System.out.println("read*-----"+position);
+							li.clear();
+							Iterator it = hashMap.keySet().iterator();  
+					        while (it.hasNext()) {  
+					            //it.next()得到的是key，tm.get(key)得到obj  
+//					            System.out.println(hashMap.get(it.next())+"/////");  
+					            li.add(hashMap.get(it.next()));
+					        } 
+					        li.add(list.size());
+							for (int i = 0; i < li.size()-1; i++) {
+								if(position>li.get(i)&&position<li.get(i+1)){
+									//找到当前的区间
+									for (int j = li.get(i); j < li.get(i+1); j++) {
+										System.out.println(position+"====="+li.get(i)+"====="+li.get(i+1)+"===="+radiobuttonmap.get(j));
+										radiobuttonmap.put(j, false);
+									}
+									radiobuttonmap.put(position, true);
+									try {
+										System.out.println(itms.getString("Headname")+"---"+itms.getString("name"));
+									} catch (JSONException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+									notifyDataSetChanged();
+									break;
+									
+									
+								}
+							}
+						}
+					  });
 					  radiogroup.addView(radioButton);
 //					  radioButton.setVisibility(View.VISIBLE);
 //				
 				 }
-				 
-				 
-			
-
 			}
 			
 			
