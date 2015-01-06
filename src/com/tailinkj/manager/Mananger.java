@@ -27,9 +27,10 @@ public class Mananger {
 			//重复的添加数量
 			FinalDb dbb=FinalDb.create(context,"sqlafinal.db");
 			ZaoCan jj=(ZaoCan) j;
+			String num=jj.getShuliang();
 			List<ZaoCan> resultList = db.findAllByWhere(ZaoCan.class, " title=\"" + jj.getTitle()+ "\"");
 			jj=resultList.get(0);
-			jj.setShuliang(Integer.parseInt(jj.getShuliang())+1+"");
+			jj.setShuliang(Integer.parseInt(jj.getShuliang())+Integer.parseInt(num)+"");
 			System.out.println(Integer.parseInt(jj.getShuliang())+1+"---");
 			dbb.update(jj);
 			return false;

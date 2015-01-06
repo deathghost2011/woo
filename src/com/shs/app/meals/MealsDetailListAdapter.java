@@ -59,7 +59,6 @@ public class MealsDetailListAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(final int position, View convertView, ViewGroup parent) {
-		System.out.println(list.get(position).toString());
 		ViewHolder viewHolder = null;
 		RadioButton radioButton = new RadioButton(mContext);
 		RadioGroup radiogroup= new RadioGroup(mContext);

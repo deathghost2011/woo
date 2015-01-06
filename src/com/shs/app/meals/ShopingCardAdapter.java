@@ -47,36 +47,36 @@ public class ShopingCardAdapter extends BaseAdapter {
 	ImageLoaderConfiguration config ;
 	public ShopingCardAdapter(Context mContext) {
 		this.mContext = mContext;
-		options = new DisplayImageOptions.Builder()
-		.cacheInMemory(true).cacheOnDisc(true).considerExifParams(true)
-		.imageScaleType(ImageScaleType.EXACTLY)
-		.cacheOnDisc(true)
-		.bitmapConfig(Bitmap.Config.ARGB_8888).resetViewBeforeLoading(true)// 设置图片在下载前是否重置，复位
-		.displayer(new RoundedBitmapDisplayer(5))// 是否设置为圆角，弧度为多少
-//		.displayer(new FadeInBitmapDisplayer(100))// 是否图片加载好后渐入的动画时间
-		.build();
-		 config = new ImageLoaderConfiguration.Builder(
-				mContext)
-				.memoryCacheExtraOptions(480, 800)
-				// 设置缓存图片时候的宽高最大值，默认为屏幕宽高
-				.threadPoolSize(5)
-				// 设置线程池的最高线程数量
-				.threadPriority(Thread.NORM_PRIORITY)
-				// 设置线程优先级
-				.denyCacheImageMultipleSizesInMemory()
-				// 自动缩放
-//				.memoryCache(new UsingFreqLimitedMemoryCache(4 * 1024 * 1024))
-				// 设置缓存大小，UsingFrgLimitMemoryCache类可以扩展
-				 .discCache(new UnlimitedDiscCache(mContext.getCacheDir()))
-				// //设置硬盘缓存
-//				.discCacheFileNameGenerator(new HashCodeFileNameGenerator())
-				// unkown
-				.imageDownloader(
-						new BaseImageDownloader(mContext, 3000, 8000))
-				.defaultDisplayImageOptions(options).build();// 如果需要打开缓存机制，需要自己builde一个option,可以是DisplayImageOptions.createSimple()
-//		// .enableLogging();
-		 MainAct.imageLoader.init(config);
-			MainAct.imageLoader.init(ImageLoaderConfiguration.createDefault(mContext));
+//		options = new DisplayImageOptions.Builder()
+//		.cacheInMemory(true).cacheOnDisc(true).considerExifParams(true)
+//		.imageScaleType(ImageScaleType.EXACTLY)
+//		.cacheOnDisc(true)
+//		.bitmapConfig(Bitmap.Config.ARGB_8888).resetViewBeforeLoading(true)// 设置图片在下载前是否重置，复位
+//		.displayer(new RoundedBitmapDisplayer(5))// 是否设置为圆角，弧度为多少
+////		.displayer(new FadeInBitmapDisplayer(100))// 是否图片加载好后渐入的动画时间
+//		.build();
+//		 config = new ImageLoaderConfiguration.Builder(
+//				mContext)
+//				.memoryCacheExtraOptions(480, 800)
+//				// 设置缓存图片时候的宽高最大值，默认为屏幕宽高
+//				.threadPoolSize(5)
+//				// 设置线程池的最高线程数量
+//				.threadPriority(Thread.NORM_PRIORITY)
+//				// 设置线程优先级
+//				.denyCacheImageMultipleSizesInMemory()
+//				// 自动缩放
+////				.memoryCache(new UsingFreqLimitedMemoryCache(4 * 1024 * 1024))
+//				// 设置缓存大小，UsingFrgLimitMemoryCache类可以扩展
+//				 .discCache(new UnlimitedDiscCache(mContext.getCacheDir()))
+//				// //设置硬盘缓存
+////				.discCacheFileNameGenerator(new HashCodeFileNameGenerator())
+//				// unkown
+//				.imageDownloader(
+//						new BaseImageDownloader(mContext, 3000, 8000))
+//				.defaultDisplayImageOptions(options).build();// 如果需要打开缓存机制，需要自己builde一个option,可以是DisplayImageOptions.createSimple()
+////		// .enableLogging();
+//		 MainAct.imageLoader.init(config);
+//			MainAct.imageLoader.init(ImageLoaderConfiguration.createDefault(mContext));
 	}
 
 	@Override

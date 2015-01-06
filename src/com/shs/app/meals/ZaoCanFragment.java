@@ -90,9 +90,7 @@ public class ZaoCanFragment extends Fragment {
     	List<JSONObject> data_list = new ArrayList<JSONObject>();
 		PublicClass.setPATH(Manager.zaocan1);
 		PublicClass.setToken(Manager.token);
-		 System.out.println("1111");
 	    resultClass= zaocan.ReturnJsonStr();
-	    System.out.println("resultClass");
 		if(resultClass==null||resultClass.equals(""))
 		{
 			 eeroinfo="无法连接服务器，请确认网络是否连接！";

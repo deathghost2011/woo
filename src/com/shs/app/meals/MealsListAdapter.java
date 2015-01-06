@@ -10,6 +10,7 @@ import org.json.JSONObject;
 import com.shs.app.R;
 import com.shs.json.bean.ZaoCanClass;
 import com.shs.json.util.ImageLoad;
+import com.tailinkj.manager.Mananger;
 
 import android.content.Context;
 import android.content.Intent;
@@ -141,23 +142,22 @@ public class MealsListAdapter extends BaseAdapter {
 		ImageView imageView;
 		Button tianjia, btnDesc, btnAdd;
 	}
-
 	private void initListener(final ViewHolder viewHolder,final int postion) {
 		viewHolder.tianjia.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				
-				ZaoCanClass.setGroup_id(viewHolder.zaocan_id.getText().toString());
-				ZaoCanClass.setFenshu(viewHolder.etTotal.getText().toString());
-				ZaoCanClass.setPrice(viewHolder.item_price.getText().toString().replace("￥", ""));
-				ZaoCanClass.setTitle(viewHolder.type.getText().toString());
-				ZaoCanClass.setImageurl(viewHolder.imgurl.getText().toString());
+				ZaoCanClass.setGroup_id(viewHolder.zaocan_id.getText().toString());//早餐id
+				ZaoCanClass.setFenshu(viewHolder.etTotal.getText().toString());//数量
+				ZaoCanClass.setPrice(viewHolder.item_price.getText().toString().replace("￥", ""));//价格
+				ZaoCanClass.setTitle(viewHolder.type.getText().toString());//欧式早餐
+				ZaoCanClass.setImageurl(viewHolder.imgurl.getText().toString());//图片地址
 				//save
 				Intent intent = new Intent(mContext,
 						DetailMealsActivity.class);
+				intent.putExtra("title", viewHolder.item_title.getText().toString());
 				mContext.startActivity(intent);
-	
 			}
 		});
 		viewHolder.btnAdd.setOnClickListener(new OnClickListener() {

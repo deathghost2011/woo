@@ -6,11 +6,11 @@ import net.tsz.afinal.annotation.sqlite.Table;
 @Table(name="ZaoCan_1")
 public class ZaoCan {
 	@Id(column="title")
-	private String title;
-	private String img;
-	private String price;
-	private String shuliang;
-	private String type;
+	private String title;//名称
+	private String img;//图片路径
+	private String price;//价格
+	private String shuliang;//数量
+	private String type;//备注
 	private boolean xuanzhong;
 	public ZaoCan(String img, String title, String price, String shuliang,
 			String type, boolean xuanzhong) {

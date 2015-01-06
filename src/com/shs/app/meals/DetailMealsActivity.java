@@ -17,6 +17,7 @@ import com.shs.json.util.DetailMealsJson;
 import com.shs.json.util.GetJSJieGuo;
 import com.shs.json.util.ImageLoad;
 import com.tailinkj.manager.Manager;
+import com.tailinkj.manager.Mananger;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -78,7 +79,7 @@ public class DetailMealsActivity extends Activity implements OnClickListener{
 		zaocan_type.setText(ZaoCanClass.getTitle());
 		etTotal.setText(ZaoCanClass.getFenshu());
 		zongjia.setText("￥"+String.valueOf(GetJSJieGuo.GetResultzaocan(Integer.valueOf(ZaoCanClass.getFenshu()))));
-
+//		System.out.println(ZaoCanClass.getFenshu()+"---"+String.valueOf(GetJSJieGuo.GetResultzaocan(Integer.valueOf(ZaoCanClass.getFenshu()))));//图片路径
 		item_icon.setImageBitmap(ImageLoad.getimage(ZaoCanClass.getImageurl()));
 	}
 	@Override
@@ -103,13 +104,16 @@ public class DetailMealsActivity extends Activity implements OnClickListener{
 
 			}
 		case R.id.tianjia:
+			//save
+//			System.out.println(getIntent().getStringExtra("title"));//名字
+			manager.SqlSave(this, new ZaoCan(ZaoCanClass.getImageurl(),getIntent().getStringExtra("title"),ZaoCanClass.getPrice(),etTotal.getText().toString(),"未标记",false));
 			Intent intent = new Intent(this, ShopingCardActivity.class);
-			
 			this.startActivity(intent);
 			break;
 			
 		}
 	}
+	Mananger manager=new Mananger();
 	//获取早餐列表
 		private void GetZaoCanList()
 		{

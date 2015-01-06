@@ -51,10 +51,10 @@ public class ShopingCardActivity extends Activity implements OnClickListener{
 		li=new ArrayList<ZaoCan>();
 		Mananger.SqlCreate(ShopingCardActivity.this);
 		mananger=new Mananger();
-		mananger.SqlSave(this, new ZaoCan("http://pic.nipic.com/2007-11-09/2007119122325154_2.jpg","4","3","1","5",false));
-		mananger.SqlSave(this, new ZaoCan("http://pic.nipic.com/2007-11-09/2007119122325154_2.jpg","2","5","1","5",false));
-		mananger.SqlSave(this, new ZaoCan("http://pic.nipic.com/2007-11-09/2007119122325154_2.jpg","4","2","1","5",false));
-		mananger.SqlSave(this, new ZaoCan("http://pic.nipic.com/2007-11-09/2007119122325154_2.jpg","4","2","1","5",true));
+//		mananger.SqlSave(this, new ZaoCan("http://pic.nipic.com/2007-11-09/2007119122325154_2.jpg","4","3","1","5",false));
+//		mananger.SqlSave(this, new ZaoCan("http://pic.nipic.com/2007-11-09/2007119122325154_2.jpg","2","5","1","5",false));
+//		mananger.SqlSave(this, new ZaoCan("http://pic.nipic.com/2007-11-09/2007119122325154_2.jpg","4","2","1","5",false));
+//		mananger.SqlSave(this, new ZaoCan("http://pic.nipic.com/2007-11-09/2007119122325154_2.jpg","4","2","1","5",true));
 		adapter=new ShopingCardAdapter(this);
 		li=(List<ZaoCan>) mananger.SqlSelectAll(this, "");
 //		li.add(new ZaoCan("http://pic.nipic.com/2007-11-09/2007119122325154_2.jpg","4","3","5","5",false));
@@ -78,7 +78,6 @@ public class ShopingCardActivity extends Activity implements OnClickListener{
 				for (int i = 0; i < xlistView.getChildCount(); i++) {
 					View layout=xlistView.getChildAt(i);
 					CheckBox button=(CheckBox) layout.findViewById(R.id.shopingcard_readiobutton1);
-					System.out.println(button.isChecked()+"-----"+i);
 					if(!button.isChecked()){
 						mananger.SqlSave(ShopingCardActivity.this, li.get(i));
 					}else{
@@ -86,7 +85,6 @@ public class ShopingCardActivity extends Activity implements OnClickListener{
 					}
 				}
 				li=(List<ZaoCan>) mananger.SqlSelectAll(ShopingCardActivity.this, "");
-				System.out.println("li"+li.size());
 				adapter.setList(li);
 				xlistView.setAdapter(adapter);
 			}
@@ -119,11 +117,12 @@ public class ShopingCardActivity extends Activity implements OnClickListener{
 				@Override
 				public boolean handleMessage(Message msg) {
 					// TODO Auto-generated method stub
-					int shuliang2 = 0,zongjia2 = 0;
+					int shuliang2 = 0;
+					double zongjia2 = 0;
 					for (int i= 0; i < li.size(); i++) {
 						if(li.get(i).isXuanzhong()){
 							shuliang2++;
-							zongjia2+=Integer.parseInt(li.get(i).getPrice())*Integer.parseInt(li.get(i).getShuliang());
+							zongjia2+=Double.parseDouble(li.get(i).getPrice())*Integer.parseInt(li.get(i).getShuliang());
 						}
 						shuliang.setText("共"+shuliang2+"件");
 						shuliang.setTextSize(18);
@@ -132,7 +131,6 @@ public class ShopingCardActivity extends Activity implements OnClickListener{
 						zongjia3.setText("￥"+zongjia2);
 						zongjia3.setTextSize(18);
 					}
-					System.out.println(li.size()+"------");
 					return false;
 				}
 			});
