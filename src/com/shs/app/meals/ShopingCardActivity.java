@@ -7,19 +7,14 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.text.Layout;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.ListView;
-import android.widget.CompoundButton.OnCheckedChangeListener;
-import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.shs.app.R;
-import com.tailinkj.manager.Manager;
 import com.tailinkj.manager.Mananger;
 
 public class ShopingCardActivity extends Activity implements OnClickListener{
@@ -43,13 +38,13 @@ public class ShopingCardActivity extends Activity implements OnClickListener{
 		right.setVisibility(View.GONE);
 		title = (TextView) this.findViewById(R.id.pub_title);
 		title.setText("购物车");
-		shuliang=(TextView) findViewById(R.id.total);
+		shuliang=(TextView) findViewById(R.id.shopingcard_total);
 		zongjia=(TextView) findViewById(R.id.zongjia2);
 		zongjia3=(TextView) findViewById(R.id.zongjia3);
 		xlistView=(XlistView) findViewById(R.id.shopingcard_xlistview);
 		jiesuan=(Button) findViewById(R.id.jiesuan);
 		li=new ArrayList<ZaoCan>();
-		Mananger.SqlCreate(ShopingCardActivity.this);
+//		Mananger.SqlCreate(ShopingCardActivity.this);
 		mananger=new Mananger();
 //		mananger.SqlSave(this, new ZaoCan("http://pic.nipic.com/2007-11-09/2007119122325154_2.jpg","4","3","1","5",false));
 //		mananger.SqlSave(this, new ZaoCan("http://pic.nipic.com/2007-11-09/2007119122325154_2.jpg","2","5","1","5",false));
@@ -57,16 +52,6 @@ public class ShopingCardActivity extends Activity implements OnClickListener{
 //		mananger.SqlSave(this, new ZaoCan("http://pic.nipic.com/2007-11-09/2007119122325154_2.jpg","4","2","1","5",true));
 		adapter=new ShopingCardAdapter(this);
 		li=(List<ZaoCan>) mananger.SqlSelectAll(this, "");
-//		li.add(new ZaoCan("http://pic.nipic.com/2007-11-09/2007119122325154_2.jpg","4","3","5","5",false));
-//		li.add(new ZaoCan("http://pic.nipic.com/2007-11-09/2007119122325154_2.jpg","4","5","2","2",true));
-//		li.add(new ZaoCan("http://pic.nipic.com/2007-11-09/2007119122325154_2.jpg","4","2","3","3",true));
-//		li.add(new ZaoCan("http://pic.nipic.com/2007-11-09/2007119122325154_2.jpg","4","4","4","4",true));
-//		li.add(new ZaoCan("http://pic.nipic.com/2007-11-09/2007119122325154_2.jpg","4","3","5","5",true));
-//		li.add(new ZaoCan("http://pic.nipic.com/2007-11-09/2007119122325154_2.jpg","4","3","5","5",true));
-//		li.add(new ZaoCan("http://pic.nipic.com/2007-11-09/2007119122325154_2.jpg","4","3","5","5",true));
-//		li.add(new ZaoCan("http://pic.nipic.com/2007-11-09/2007119122325154_2.jpg","4","3","5","5",true));
-//		li.add(new ZaoCan("http://pic.nipic.com/2007-11-09/2007119122325154_2.jpg","4","3","5","5",true));
-//		li.add(new ZaoCan("http://pic.nipic.com/2007-11-09/2007119122325154_2.jpg","4","3","5","5",true));
 		adapter.setList(li);
 		xlistView.setAdapter(adapter);
 		jiesuan.setOnClickListener(new OnClickListener() {
@@ -84,9 +69,10 @@ public class ShopingCardActivity extends Activity implements OnClickListener{
 						//选中的
 					}
 				}
-				li=(List<ZaoCan>) mananger.SqlSelectAll(ShopingCardActivity.this, "");
-				adapter.setList(li);
-				xlistView.setAdapter(adapter);
+				finish();
+//				li=(List<ZaoCan>) mananger.SqlSelectAll(ShopingCardActivity.this, "");
+//				adapter.setList(li);
+//				xlistView.setAdapter(adapter);
 			}
 		});
 		button=(CheckBox) findViewById(R.id.shopingcard_quanxuan);
@@ -121,7 +107,7 @@ public class ShopingCardActivity extends Activity implements OnClickListener{
 					double zongjia2 = 0;
 					for (int i= 0; i < li.size(); i++) {
 						if(li.get(i).isXuanzhong()){
-							shuliang2++;
+							shuliang2+=Integer.parseInt(li.get(i).getShuliang());
 							zongjia2+=Double.parseDouble(li.get(i).getPrice())*Integer.parseInt(li.get(i).getShuliang());
 						}
 						shuliang.setText("共"+shuliang2+"件");
@@ -141,10 +127,36 @@ public class ShopingCardActivity extends Activity implements OnClickListener{
 		switch (v.getId()) {
 		
 		case R.id.btn_left:
+			
+			mananger.SqlDeleteAll(ShopingCardActivity.this, "");
+			for (int i = 0; i < xlistView.getChildCount(); i++) {
+				View layout=xlistView.getChildAt(i);
+				CheckBox button=(CheckBox) layout.findViewById(R.id.shopingcard_readiobutton1);
+					mananger.SqlSave(ShopingCardActivity.this, li.get(i));
+			}
 			this.finish();
 			break;
 		}
 	}
+	public boolean onKeyUp(int keyCode, KeyEvent event) {
 
+		switch (keyCode) {
+		case KeyEvent.KEYCODE_BACK:{
+			
+			mananger.SqlDeleteAll(ShopingCardActivity.this, "");
+			for (int i = 0; i < xlistView.getChildCount(); i++) {
+				View layout=xlistView.getChildAt(i);
+				CheckBox button=(CheckBox) layout.findViewById(R.id.shopingcard_readiobutton1);
+					mananger.SqlSave(ShopingCardActivity.this, li.get(i));
+			}
+			finish();
+		}
 
+		break;
+
+		default:
+			break;
+		}
+		return super.onKeyUp(keyCode, event);
+	}
 }

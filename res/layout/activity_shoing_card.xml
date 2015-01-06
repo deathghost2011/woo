@@ -60,7 +60,7 @@
         android:orientation="horizontal" >
 
         <TextView
-            android:id="@+id/total"
+            android:id="@+id/shopingcard_total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="共1件"

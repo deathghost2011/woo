@@ -48,13 +48,13 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:text=""
-            android:textSize="@dimen/text_size_18" />
+            android:textSize="@dimen/text_size_18" 
+            />
 
         <CheckBox 
             android:id="@+id/checkbox"
              android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
             />
         
      

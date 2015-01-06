@@ -108,22 +108,39 @@ public class DetailMealsActivity extends Activity implements OnClickListener{
 		case R.id.tianjia:
 			//save
 //			System.out.println(getIntent().getStringExtra("title"));//名字
-			System.out.println(listView.getChildCount()+"----");
-			for (int i = 0; i < MealsDetailListAdapter.radiobuttonmap.size(); i++) {
+			StringBuffer buffer=new StringBuffer();
+			//得到radiobutton选择的东西
+			for (int i = 0; i < listzaocan.size(); i++) {
+//				System.out.println(MealsDetailListAdapter.radiobuttonmap.size()+"----");
 				if(MealsDetailListAdapter.radiobuttonmap.get(i)!=null&&MealsDetailListAdapter.radiobuttonmap.get(i)==true){
 					JSONObject jsonObject=listzaocan.get(i);
 					
 					try {
-						System.out.println(jsonObject.getString("Headname")+"---"+jsonObject.getString("name"));
+//						System.out.println(jsonObject.getString("Headname")+"---"+jsonObject.getString("name"));
+						buffer.append(jsonObject.getString("name")+",");
 					} catch (JSONException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}
 			};
-			manager.SqlSave(this, new ZaoCan(ZaoCanClass.getImageurl(),getIntent().getStringExtra("title"),ZaoCanClass.getPrice(),etTotal.getText().toString(),"未标记",false));
-//			Intent intent = new Intent(this, ShopingCardActivity.class);
-//			this.startActivity(intent);
+			//得到checkboxmap选择的东西
+			for (int i = 0; i < listzaocan.size(); i++) {
+				if(MealsDetailListAdapter.checkboxmap.get(i)!=null&&MealsDetailListAdapter.checkboxmap.get(i)==true){
+					JSONObject jsonObject=listzaocan.get(i);
+					try {
+//						System.out.println(jsonObject.getString("Headname")+"---"+jsonObject.getString("name"));
+						buffer.append(jsonObject.getString("name")+",");
+					} catch (JSONException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			};
+			
+			manager.SqlSave(this, new ZaoCan(ZaoCanClass.getImageurl(),getIntent().getStringExtra("title"),ZaoCanClass.getPrice(),etTotal.getText().toString(),buffer.toString(),false));
+			Intent intent = new Intent(this, ShopingCardActivity.class);
+			this.startActivity(intent);
 			break;
 			
 		}

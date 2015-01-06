@@ -44,6 +44,7 @@ public class MealsDetailListAdapter extends BaseAdapter {
 	public MealsDetailListAdapter(Context mContext) {
 		this.mContext = mContext;
 		radiobuttonmap=new HashMap<Integer, Boolean>();
+		checkboxmap=new HashMap<Integer, Boolean>();
 	}
 
 	@Override
@@ -63,6 +64,8 @@ public class MealsDetailListAdapter extends BaseAdapter {
 List<Integer > li=new ArrayList<Integer>();
 TreeMap< Integer , Integer> hashMap=new TreeMap<Integer, Integer>();
 public static HashMap< Integer , Boolean> radiobuttonmap;
+public static HashMap< Integer , Boolean> checkboxmap;
+boolean ii=true;
 	@Override
 	public View getView(final int position, View convertView, ViewGroup parent) {
 		ViewHolder viewHolder = null;
@@ -117,19 +120,65 @@ public static HashMap< Integer , Boolean> radiobuttonmap;
 				 typelayout.setVisibility(View.VISIBLE);	
 				 
 			 
-				 if(itms.getBoolean("Iscorr") == false)
+				 if(itms.getBoolean("Iscorr") == true)
 				 {
+					 if(checkboxmap.get(position)==null){
+						 checkboxmap.put(position, false);
+					 }
 					//true多选 
 					 String name=itms.getString("name");  
 					 radioButton.setVisibility(View.GONE);
 				     viewHolder.breakfast.setText(name);
 				     viewHolder.checkBox.setVisibility(View.VISIBLE);
+				     if(checkboxmap.get(position)){
+				    	 viewHolder.checkBox.setChecked(true);
+					  }else{
+						  viewHolder.checkBox.setChecked(false);
+					  }
 				     viewHolder.checkBox.setOnClickListener(new OnClickListener() {
 							
 							@Override
 							public void onClick(View v) {
 								// TODO Auto-generated method stub
-								System.out.println("viewHolder*-----"+position);
+//								System.out.println("viewHolder*-----"+position);
+								li.clear();
+								Iterator it = hashMap.keySet().iterator();  
+						        while (it.hasNext()) {  
+						            //it.next()得到的是key，tm.get(key)得到obj  
+//						            System.out.println(hashMap.get(it.next())+"/////");  
+						            li.add(hashMap.get(it.next()));
+						        } 
+						        li.add(list.size());
+						        
+								for (int i = 0; i < li.size()-1; i++) {
+									if(position>li.get(i)&&position<li.get(i+1)){
+										//找到当前的区间
+										int ge=0;
+										for (int j = li.get(i); j < li.get(i+1); j++) {
+//											System.out.println(position+"====="+li.get(i)+"====="+li.get(i+1)+"===="+radiobuttonmap.get(j));
+											if(checkboxmap.get(j)!=null&&checkboxmap.get(j)==true){
+												ge++;
+											}
+										}
+										if(ge<2){
+											checkboxmap.put(position, true);
+											notifyDataSetChanged();
+										}else{
+											checkboxmap.put(position, false);
+											notifyDataSetChanged();
+										}
+//										checkboxmap.put(position, true);
+//										try {
+////											System.out.println(itms.getString("Headname")+"---"+itms.getString("name"));
+//										} catch (JSONException e) {
+//											// TODO Auto-generated catch block
+//											e.printStackTrace();
+//										}
+										notifyDataSetChanged();
+										break;
+									}
+								}
+							
 							}
 						  });
 				 }
@@ -182,6 +231,8 @@ public static HashMap< Integer , Boolean> radiobuttonmap;
 							}
 						}
 					  });
+//					  LinearLayout.LayoutParams params= new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+//						 params.setMargins(0, 0, 100, 0);
 					  radiogroup.addView(radioButton);
 //					  radioButton.setVisibility(View.VISIBLE);
 //				
@@ -218,6 +269,7 @@ public static HashMap< Integer , Boolean> radiobuttonmap;
 //				viewHolder.breakfast.setText("松糕");
 //			}
 //		}
+		 
 		 typelayout.addView(radiogroup);
 		return convertView;
 	}

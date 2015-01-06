@@ -21,18 +21,40 @@ public class Mananger {
 		FinalDb db=FinalDb.create(context,"sqlafinal.db");
 //		User user=new User("你好",19);
 		try{
-			db.save(j);
+			ZaoCan jj=(ZaoCan) j;
+			String num=jj.getShuliang();
+			String zixuan=jj.getType();
+			List<ZaoCan> resultList = db.findAllByWhere(ZaoCan.class, " title=\"" + jj.getTitle()+ "\"");
+			System.out.println(resultList.size()+"++++");
+			jj=null;
+			for (int i = 0; i < resultList.size(); i++) {
+				jj=resultList.get(i);
+				if(jj.getType().equals(zixuan)){
+					jj.setShuliang(Integer.parseInt(jj.getShuliang())+Integer.parseInt(num)+"");
+					db.update(jj);
+					System.out.println("updata");
+					break;
+				}
+				jj=null;
+			}
+//			jj=resultList.get(0);
+//			jj.setShuliang(Integer.parseInt(jj.getShuliang())+Integer.parseInt(num)+"");
+//			System.out.println(Integer.parseInt(jj.getShuliang())+1+"---");//查看个数
+//			db.update(jj);
+			if(jj==null){
+				db.save(j);
+				System.out.println("add");
+			}
 		}catch(SQLiteConstraintException e){
 			System.out.println("名字重复");
 			//重复的添加数量
-			FinalDb dbb=FinalDb.create(context,"sqlafinal.db");
 			ZaoCan jj=(ZaoCan) j;
 			String num=jj.getShuliang();
 			List<ZaoCan> resultList = db.findAllByWhere(ZaoCan.class, " title=\"" + jj.getTitle()+ "\"");
 			jj=resultList.get(0);
 			jj.setShuliang(Integer.parseInt(jj.getShuliang())+Integer.parseInt(num)+"");
-			System.out.println(Integer.parseInt(jj.getShuliang())+1+"---");
-			dbb.update(jj);
+//			System.out.println(Integer.parseInt(jj.getShuliang())+1+"---");//查看个数
+			db.update(jj);
 			return false;
 		}
 		return true;
