@@ -1,8 +1,13 @@
 package com.shs.app.meals;
 
+import net.tsz.afinal.annotation.sqlite.Id;
+import net.tsz.afinal.annotation.sqlite.Table;
+
+@Table(name="ZaoCan_1")
 public class ZaoCan {
-	private String img;
+	@Id(column="title")
 	private String title;
+	private String img;
 	private String price;
 	private String shuliang;
 	private String type;
