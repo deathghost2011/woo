@@ -151,7 +151,6 @@ public class ShopingCardActivity extends Activity implements OnClickListener{
 			}
 			finish();
 		}
-
 		break;
 
 		default:

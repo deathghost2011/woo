@@ -161,7 +161,12 @@ boolean ii=true;
 											}
 										}
 										if(ge<2){
-											checkboxmap.put(position, true);
+											if(checkboxmap.get(position)){
+												checkboxmap.put(position, false);
+											}else{
+												checkboxmap.put(position, true);
+											}
+											
 											notifyDataSetChanged();
 										}else{
 											checkboxmap.put(position, false);
@@ -212,11 +217,20 @@ boolean ii=true;
 							for (int i = 0; i < li.size()-1; i++) {
 								if(position>li.get(i)&&position<li.get(i+1)){
 									//找到当前的区间
-									for (int j = li.get(i); j < li.get(i+1); j++) {
-										System.out.println(position+"====="+li.get(i)+"====="+li.get(i+1)+"===="+radiobuttonmap.get(j));
-										radiobuttonmap.put(j, false);
+									if(radiobuttonmap.get(position)){
+										radiobuttonmap.put(position, false);
+									}else{
+										radiobuttonmap.put(position, true);
 									}
-									radiobuttonmap.put(position, true);
+									for (int j = li.get(i); j < li.get(i+1); j++) {
+//										System.out.println(position+"====="+li.get(i)+"====="+li.get(i+1)+"===="+radiobuttonmap.get(j));
+										if(j!=position){
+											radiobuttonmap.put(j, false);
+										}
+										
+									}
+									
+//									radiobuttonmap.put(position, true);
 									try {
 										System.out.println(itms.getString("Headname")+"---"+itms.getString("name"));
 									} catch (JSONException e) {
